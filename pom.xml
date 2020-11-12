@@ -18,6 +18,8 @@
 		<java.version>11</java.version>
 	</properties>
 	
+	<!--  tells maven these are repositories that I like to push my code 
+		  the default repository is releases-local and for snapshots is snapshot-local -->
 	<distributionManagement>
 		<repository>
 			<id>release</id>
@@ -30,6 +32,9 @@
 			<url>http://localhost:9090/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
+	<!--  This hooks our source code to github 
+	      when we tag it, we tag the head version of the code -->
 	<scm>
 		<connection>scm:git:git@github.com:vrahimi/stat-spring.git</connection>
 		<developerConnection>scm:git:git@github.com:vrahimi/stat-spring.git</developerConnection>
@@ -143,6 +148,10 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<!--  cleans up the package, prepares the release and update the versions within pom.xml
+			      it will push the code and tag the code and push it to git and increment the version
+			      for the next development code -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
