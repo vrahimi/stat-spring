@@ -1,0 +1,36 @@
+.swp
+.swo
+~
+.DS_Store
+
+# I know these look redundant, but Windows insists on it
+# Kevin H.
+*.swp
+*.swo
+*~
+
+# Build Artifacts
+
+.gradle/
+build/
+target/
+bin/
+dependency-reduced-pom.xml
+
+# Eclipse Project Files - STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+
+# IntelliJ IDEA Files
+
+*.iml
+*.ipr
+*.iws
+*.idea
+
+
+.vscode
