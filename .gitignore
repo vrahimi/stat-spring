@@ -10,6 +10,8 @@
 *~
 
 # Build Artifacts
+env.bat
+mysql-connector-java-8.0.21.jar
 
 .gradle/
 build/

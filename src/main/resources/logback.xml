@@ -71,6 +71,15 @@
   </logger>
 -->
 
+	<!-- If you need to see generated sql 
+    <logger name="org.hibernate.SQL" level="debug" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    -->
+
   <!--<logger name="org.springframework.boot.SpringApplication" level="debug">-->
   <!--<appender-ref ref="STDOUT" />-->
   <!--</logger>-->
