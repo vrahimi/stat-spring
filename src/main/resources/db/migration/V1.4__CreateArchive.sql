@@ -13,11 +13,11 @@ CREATE TABLE project
 (
   project_id Int NOT NULL AUTO_INCREMENT,
   descr Varchar(100) NOT NULL,
-  workflow_id Int NOT NULL,
+  workflow_id Int,
   step_id Int NOT NULL,
   update_dt Datetime NOT NULL,
-  owner_id Int,
-  update_userid Int,
+  owner_id Int NOT NULL,
+  update_userid Int NOT NULL,
   PRIMARY KEY (project_id)
 )
 ;
@@ -39,8 +39,8 @@ CREATE INDEX IX_Relationship13 ON project (step_id)
 CREATE TABLE rd_object
 (
   objectid Int NOT NULL AUTO_INCREMENT,
-  object_type_id Int,
-  descr Varchar(300),
+  object_type_id Int NOT NULL,
+  descr Varchar(300) NOT NULL,
   PRIMARY KEY (objectid)
 )
 ;
@@ -63,7 +63,7 @@ CREATE TABLE project_archive
 (
   archive_id Int NOT NULL AUTO_INCREMENT,
   project_id Int NOT NULL,
-  env_id Int,
+  env_id Int NOT NULL,
   PRIMARY KEY (archive_id)
 )
 ;
@@ -92,7 +92,7 @@ CREATE TABLE rd_environment
 (
   env_id Int NOT NULL AUTO_INCREMENT,
   descr Varchar(50) NOT NULL,
-  status_cd Char(1) NOT NULL,
+  status_cd Char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (env_id)
 )
 ;
@@ -105,7 +105,7 @@ CREATE TABLE rd_user
   user_code varchar(50) NOt NULL,
   last_name Varchar(30) NOT NULL,
   first_name Varchar(30) NOT NULL,
-  status_cd Char(1) NOT NULL,
+  status_cd Char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (user_id)
 )
 ;

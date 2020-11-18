@@ -34,17 +34,17 @@ public class Project implements Serializable {
 
 	// bi-directional many-to-one association to RdStep
 	@ManyToOne
-	@JoinColumn(name = "step_id")
+	@JoinColumn(name = "step_id", nullable = false)
 	private RdStep step;
 
 	// bi-directional many-to-one association to RdUser
 	@ManyToOne
-	@JoinColumn(name = "owner_id")
+	@JoinColumn(name = "owner_id", nullable = false)
 	private RdUser owner;
 
 	// bi-directional many-to-one association to RdUser
 	@ManyToOne
-	@JoinColumn(name = "update_userid")
+	@JoinColumn(name = "update_userid", nullable = false)
 	private RdUser updatedUser;
 
 	// bi-directional many-to-one association to RdWorkflow
